@@ -1,0 +1,15 @@
+.transparent-container{
+    width: 8rem;
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+    background: #50505050;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    gap: 1rem;
+    color: white;
+    backdrop-filter: blur(2rem);
+    z-index: 1;
+}
