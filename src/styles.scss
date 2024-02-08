@@ -1,9 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../src/colors.scss';
+
 body {
   background-color: #0e0d0d;
   padding: 0 5rem;
   font-family: 'Ubuntu', sans-serif;
 }
+
+h1{
+    font-family: 'rust';
+    letter-spacing: 0.15rem;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 0.5rem 0.9rem;
+    border-radius: 5rem;
+    background: $primary;
+}
+
+@font-face {
+    font-family: "rust";
+    src: url('../src/assets/fonts/Rust.ttf') format('truetype');
+  }
+
+  .sec-color{
+    color: $secondary;
+  }
 
 .gradient-container {
   display: flex;

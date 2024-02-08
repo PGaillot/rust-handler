@@ -1,8 +1,11 @@
-.transparent-container{
-    width: 8rem;
-    position: absolute;
-    top: -2rem;
-    left: -2rem;
+.transparent-benefits-card-container {
+  width: 18rem;
+  position: absolute;
+  height: min-content;
+  z-index: 1;
+
+  .transparent-container {
+    position: relative;
     background: #50505050;
     border-radius: 1rem;
     display: flex;
@@ -11,5 +14,30 @@
     gap: 1rem;
     color: white;
     backdrop-filter: blur(2rem);
-    z-index: 1;
+
+    .reflect-card{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 2rem;
+        height: 12rem;
+        background: red;
+    }
+
+    .transparent-container-title {
+      font-family: 'rust';
+      letter-spacing: 0.05rem;
+      font-size: 1.2rem;
+    }
+
+    .transparent-container-img {
+      $size: 8rem;
+      position: absolute;
+      top: calc($size/-2.5);
+      left: calc($size/-2.5);
+      height: $size;
+      width: $size;
+    }
+  }
 }

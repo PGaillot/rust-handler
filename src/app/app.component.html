@@ -1,18 +1,33 @@
 <div id="headerPage">
   <img src="../assets/rust-handler-logo.svg" alt="" />
+  <h3 class="baseline">the most useful rust server tool.</h3>
+  <button class="btn">purchase</button>
 </div>
 
-<div class="get-started">
+<div id="getStarted">
+  <div #blurGradient class="blur-gradient-background"></div>
 
-  <transparent-benefits-card
-  title="Advanced customization"
-  description="Have full control over server configuration, crafting a unique gaming experience."
-  imgUrl="https://files.facepunch.com/rust/item/axe.salvaged_512.png"
-  ></transparent-benefits-card>
-  
-  <div class="gradient-container">
-    <div class="gradient-box">
+  <div class="get-started-block">
+    @for(card of benefitCards; track card){
+
+    <transparent-benefits-card
+      [title]="card.title"
+      [top]="card.top"
+      [right]="card.right"
+      [bottom]="card.bottom"
+      [left]="card.left"
+      [description]="card.description"
+      [imgUrl]="card.imgUrl"
+    ></transparent-benefits-card>
+
+    }
+
+    <div class="gradient-container">
+      <div class="gradient-box"></div>
     </div>
   </div>
-  
+</div>
+
+<div id="Connection">
+  <h1>Simply keep your server <span class="sec-color">up-to-date</span></h1>
 </div>

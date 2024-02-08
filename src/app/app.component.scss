@@ -1,16 +1,61 @@
-#headerPage{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+@import '../colors.scss';
+
+@mixin col-center() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.gradient-box{
-    height: 30rem;
-    width: 100%;
+#headerPage {
+  @include col-center();
+  margin-top: 4rem;
+
+  width: 100%;
+  .baseline {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
 }
 
-.get-started{
+.gradient-box {
+  height: 30rem;
+  width: 100%;
+}
+
+#getStarted {
+  position: relative;
+  margin-top: 6rem;
+  margin-bottom: 22rem;
+  @include col-center();
+
+  .blur-gradient-background {
+    z-index: -1;
+    position: absolute;
+    // top: 50%;
+    // left: 50%;
+    height: 25rem;
+    width: 35rem;
+    background: radial-gradient(ellipse at top, $primary, transparent),
+      radial-gradient(ellipse at bottom, $secondary, transparent);
+      transform: translate(-50%, -50%);
+    transition: all 3s ease-in-out;
+    filter: blur(10rem);
+  }
+
+  .get-started-block {
     position: relative;
-    min-width:  20rem;
-    max-width:  60rem;
+    min-width: 30rem;
+    max-width: 60rem;
+    width: -webkit-fill-available;
+
+  }
+}
+
+
+#Connection{
+    h1{
+        color: white;
+        text-align: center;
+    }
 }
