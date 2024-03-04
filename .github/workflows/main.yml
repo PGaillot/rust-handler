@@ -29,9 +29,5 @@ jobs:
               uses: JamesIves/github-pages-deploy-action@v4
               with:
                   folder: "/var/www/rust-handler" # The folder the action should deploy.
-                  host: ${{ secrets.SSH_HOST }}
-                  username: ${{ secrets.SSH_USERNAME }}
                   ssh-key: ${{ secrets.SSH_KEY }}
-                  port: ${{ secrets.SSH_PORT }}
-                  source: "./dist/rust-handler/*"
-                  strip_components: 1 # this is important
+    
