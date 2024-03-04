@@ -26,12 +26,12 @@ jobs:
               run: npm run build
 
             - name: 📝 Deploy
-              uses: appleboy/scp-action@master
+              uses: appleboy/ssh-action@v0.1.10
               env:
-                HOST: 192.168.1.151
-                USERNAME: ${{ secrets.SSH_USERNAME }}
+                host: 192.168.1.151
+                username: ${{ secrets.SSH_USERNAME }}
                 PORT: 22
-                PASSWORD: ${{ secrets.SSH_KEY }}
+                password: ${{ secrets.SSH_KEY }}
               with:
                 source: "dist/rust-handler/*"
                 target: "/var/www/rust-handler"
