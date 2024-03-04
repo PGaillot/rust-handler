@@ -29,6 +29,6 @@ jobs:
               uses: shimataro/ssh-key-action@v2
               with:
                 key: ${{ secrets.SSH_KEY }}
-                known_hosts: ${{ secrets.USERNAME }}
+                known_hosts: ${{ secrets.SSH_USERNAME }}
                 if_key_exists: fail # replace / ignore / fail; optional (defaults to fail)
             - name: rsync over SSH
