@@ -28,6 +28,6 @@ jobs:
             - name: 📝 Deploy
               uses: JamesIves/github-pages-deploy-action@v4
               with:
-                  folder: "/var/www/rust-handler" # The folder the action should deploy.
+                  folder: "./dist/rust-handler" # The folder the action should deploy.
                   ssh-key: ${{ secrets.SSH_KEY }}
     
