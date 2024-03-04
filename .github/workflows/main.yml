@@ -24,7 +24,7 @@ jobs:
               run: npm run build
 
             - name: 📝 Deploy
-              uses: appleboy/scp-action@master
+              uses: appleboy/scp-action@v0.1.7
               with:
                 host: 192.168.1.151
                 username: ${{ secrets.SSH_USERNAME }}
