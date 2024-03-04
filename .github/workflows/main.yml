@@ -11,7 +11,7 @@ jobs:
         runs-on: ubuntu-22.04
         steps:
             - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v3
             - uses: actions/setup-node@v2
 
             - name: 🪢 Use Node.js 20
@@ -26,12 +26,12 @@ jobs:
               run: npm run build
 
             - name: 📝 Deploy
-              uses: appleboy/scp-action@master
+              uses: JamesIves/github-pages-deploy-action@v4
               with:
-                host: 192.168.1.151
-                username: ${{ secrets.SSH_USERNAME }}
-                password: ${{ secrets.SSH_KEY }}
-                port: 22
-                source: "dist/rust-handlere/*"
-                target: "/var/www/rust-handler"
-                strip_components: 1 # this is important
+                  folder: "/var/www/rust-handler" # The folder the action should deploy.
+                  host: ${{ secrets.SSH_HOST }}
+                  username: ${{ secrets.SSH_USERNAME }}
+                  ssh-key: ${{ secrets.SSH_KEY }}
+                  port: ${{ secrets.SSH_PORT }}
+                  source: "./dist/rust-handler/*"
+                  strip_components: 1 # this is important
