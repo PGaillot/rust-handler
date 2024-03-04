@@ -26,12 +26,11 @@ jobs:
               run: npm run build
 
             - name: 📝 Deploy
-              uses: appleboy/scp-action@v0.1.7
+              uses: SamKirkland/FTP-Deploy-Action@3.1.1
               with:
-                host: 192.168.1.151
-                username: ${{ secrets.SSH_USERNAME }}
-                password: ${{ secrets.SSH_KEY }}
-                port: 80
+                ftp-server: 192.168.1.151
+                ftp-username: ${{ secrets.SSH_USERNAME }}
+                ftp-password: ${{ secrets.SSH_KEY }}
                 source: "dist/rust-handlere/*"
                 target: "/var/www/rust-handler"
                 strip_components: 1 # this is important
