@@ -1,37 +1,33 @@
-name: CI
+name: Deploy
 
-on: [push]
+on:
+    push:
+        branches:
+            - master
 
-jobs:
-  build:
+jobs: 
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v2
 
-    # using Ubuntu
-    runs-on: ubuntu-latest
+            - name: 🪢 Use Node.js 20
+              uses: actions/setup-node@v3
+              with:
+                node-version: 20.x
 
-    steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1 #this installs node and npm for us
-      with:
-        node-version: '20.x'
+            - name: 🛠️ Install dependencies
+              run: npm ci
 
-    - uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
+            - name: 🏗️ Build Website
+              run: npm run build
 
-    - run: npm install
-    - run: npm install -g @angular/cli > /dev/null
-    - run: ng build --prod
-
-    - name: copy file via ssh key
-      uses: PGaillot/rust-handler@master
-      with:
-        HOST: http://192.168.1.151/
-        USERNAME: ${{ secrets.SSH_USERNAME }}
-        PORT: 22
-        KEY: ${{ secrets.SSH_KEY }}
-        source: "./dist/rust-handler/"
-        target: "/var/www/rust-handler/"
-        strip_components: 3 # this is important
+            - name: 📝 Set OHV credentials
+              uses: pitscher/ovh-deploy-hosting-action@v1
+              env:
+                OVH_HOSTING_USER: ${{ secrets.SSH_USERNAME }}
+                OVH_HOSTING_PASSWORD: ${{ secrets.SSH_KEY }}
+                OVH_HOSTING_DOMAIN: 192.168.1.151
+                REPOSITORY_NAME: rust-handler
+                REPOSITORY_URL: https://github.com/PGaillot/rust-handler
