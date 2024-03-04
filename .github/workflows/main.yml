@@ -32,7 +32,7 @@ jobs:
                 USERNAME: ${{ secrets.SSH_USERNAME }}
                 PORT: 22
                 PASSWORD: ${{ secrets.SSH_KEY }}
-                source: "dist/rust-handlere/*"
               with:
+                source: "dist/rust-handler/*"
                 target: "/var/www/rust-handler"
-                strip_components: 1 # this is important
+                strip_components: 2 # this is important
