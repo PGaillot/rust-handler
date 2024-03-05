@@ -34,4 +34,4 @@ jobs:
                 password: ${{ secrets.SSH_PASS }}
                 port: ${{ secrets.SSH_PORT }}
                 source: './dist/'
-                target: './var/www/rust-handler2'
+                target: './www/rust-hdandler'
