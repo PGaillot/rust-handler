@@ -28,9 +28,9 @@ jobs:
             - name: 📝 Set OHV credentials
               uses: appleboy/scp-action@v0.1.7
               with:
-                host: ${{ secrets.HOST }}
-                username: ${{ secrets.USERNAME }}
-                key: ${{ secrets.KEY }}
-                port: ${{ secrets.PORT }}
+                host: ${{ secrets.SSH_HOST }}
+                username: ${{ secrets.SSH_USERNAME }}
+                key: ${{ secrets.SSH_KEY }}
+                port: ${{ secrets.SSH_PORT }}
                 source: ./dist/rust-handler/
                 target: './var/www/rust-handler'
