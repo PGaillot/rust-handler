@@ -24,10 +24,11 @@ jobs:
               run: npm run build
 
             - name: 📝 Set OHV credentials
-              uses: pitscher/ovh-deploy-hosting-action@v1
-              env:
-                OVH_HOSTING_USER: ${{ secrets.SSH_USERNAME }}
-                OVH_HOSTING_PASSWORD: ${{ secrets.SSH_KEY }}
-                OVH_HOSTING_DOMAIN: 192.168.1.151
-                REPOSITORY_NAME: rust-handler
-                REPOSITORY_URL: https://github.com/PGaillot/rust-handler
+              uses: appleboy/scp-action@v0.1.7
+              with:
+                host: ${{ secrets.HOST }}
+                username: ${{ secrets.USERNAME }}
+                key: ${{ secrets.KEY }}
+                port: ${{ secrets.PORT }}
+                source: ./dist/rust-handler/
+                target: './var/www/rust-handler'
