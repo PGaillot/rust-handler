@@ -12,7 +12,7 @@ jobs:
         steps:
             - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
             - uses: actions/checkout@v3
-            - uses: actions/setup-node@v2
+            - uses: actions/setup-node@v3
 
             - name: 🪢 Use Node.js 20
               uses: actions/setup-node@v3
@@ -26,11 +26,12 @@ jobs:
               run: npm run build
 
             - name: 📝 Set OHV credentials
+            
               uses: appleboy/scp-action@v0.1.7
               with:
                 host: ${{ secrets.SSH_HOST }}
                 username: ${{ secrets.SSH_USERNAME }}
-                key: ${{ secrets.SSH_KEY }}
+                password: ${{ secrets.SSH_PASS }}
                 port: ${{ secrets.SSH_PORT }}
                 source: ./dist/rust-handler/
                 target: './var/www/rust-handler'
