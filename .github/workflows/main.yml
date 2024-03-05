@@ -33,5 +33,5 @@ jobs:
                 username: ${{ secrets.SSH_USERNAME }}
                 password: ${{ secrets.SSH_PASS }}
                 port: ${{ secrets.SSH_PORT }}
-                source: './dist/${{ github.repository }}'
+                source: './dist'
                 target: './www/${{ github.repository }}'
