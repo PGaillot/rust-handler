@@ -12,7 +12,6 @@ jobs:
         steps:
             - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
             - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
 
             - name: 🪢 Use Node.js 20
               uses: actions/setup-node@v3
@@ -31,7 +30,7 @@ jobs:
               with:
                 host: ${{ secrets.SSH_HOST }}
                 username: ${{ secrets.SSH_USERNAME }}
-                key: ${{ secrets.SSH_KEY }}
+                password: ${{ secrets.SSH_PASS }}
                 port: ${{ secrets.SSH_PORT }}
                 source: './dist/*'
                 target: './var/www/'
