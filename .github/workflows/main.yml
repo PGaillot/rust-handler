@@ -33,4 +33,4 @@ jobs:
                 password: ${{ secrets.SSH_PASS }}
                 port: ${{ secrets.SSH_PORT }}
                 source: './dist/*'
-                target: './var/www/'
+                target: './var/www'
