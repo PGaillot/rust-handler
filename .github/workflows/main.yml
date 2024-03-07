@@ -1,5 +1,5 @@
 name: Deploy
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} deploy ${{ github.repository }} process 🚀
 
 on:
     push:
@@ -34,4 +34,4 @@ jobs:
                 password: ${{ secrets.SSH_PASS }}
                 port: ${{ secrets.SSH_PORT }}
                 source: './dist/*'
-                target: '/var/www/html'
+                target: '/var/www/html/${{ github.repository }}'
