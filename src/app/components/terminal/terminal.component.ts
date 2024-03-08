@@ -31,12 +31,14 @@ import { Component, Input, OnInit } from '@angular/core'
           <div id="progress"></div>
         </section>
 
-        @for(log of displayingLog; track log){
-        <span class="code-line">
-          <p class="sever-name">user&#64;rustServer:</p>
-          <p class="code-txt">{{ log }}</p>
-        </span>
-        }
+        <div id="terminal-line-content">
+          @for(log of displayingLog; track log){
+          <span class="code-line">
+            <p class="sever-name">user&#64;rustServer:</p>
+            <p class="code-txt">{{ log }}</p>
+          </span>
+          }
+        </div>
       </div>
     </div>
   `,

@@ -4,54 +4,58 @@
   border: 2px solid white;
   border-radius: 0.5rem;
   max-width: 60rem;
-  min-width : 40rem;
+  min-width: 40rem;
+  background-color: $black;
+filter: drop-shadow(0 0 4rem $primary-op50);
 
-#terminal-header{
 
+  #terminal-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: rgba(182, 182, 182, 0.185);
     padding: 0 1rem;
     height: 2rem;
-    
 
-    #terminal-title{
-        color: rgba(255, 255, 255, 0.425);
+    #terminal-title {
+      color: rgba(255, 255, 255, 0.425);
     }
-    
-    .ter-header-act-btn-wrapper{
-        
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
 
-        .ter-header-act-btn{
-            height: 0.8rem;
-            width: 0.8rem;
-            border-radius: 0.8rem;
-        }
+    .ter-header-act-btn-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .ter-header-act-btn {
+        height: 0.8rem;
+        width: 0.8rem;
+        border-radius: 0.8rem;
+      }
     }
-}
+  }
 
-
-#terminal-content{
+  #terminal-content {
     padding: 1rem 2rem;
-}
-
-  .code-line {
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
 
-    .sever-name,
-    .code-txt {
-        font-family: 'Courier New', Courier, monospace;
-    }
+    #terminal-line-content {
+      .code-line {
+        display: flex;
 
-    .sever-name {
-        color: rgb(97, 185, 102);
-    }
-    .code-txt {
-        color: white;
+        .sever-name,
+        .code-txt {
+          font-family: 'Courier New', Courier, monospace;
+        }
+
+        .sever-name {
+          color: rgb(97, 185, 102);
+        }
+        .code-txt {
+          color: white;
+        }
+      }
     }
   }
 
