@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core'
   template: `
     <div id="terminal">
       <div id="terminal-header">
-        <p id="terminal-title">old fashion way</p>
+        <p>old fashion way</p>
 
         <div class="ter-header-act-btn-wrapper">
           <span

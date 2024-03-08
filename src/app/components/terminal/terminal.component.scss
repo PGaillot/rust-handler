@@ -3,11 +3,9 @@
 #terminal {
   border: 2px solid white;
   border-radius: 0.5rem;
-  max-width: 60rem;
-  min-width: 40rem;
+  width: 100%;
   background-color: $black;
-filter: drop-shadow(0 0 4rem $primary-op50);
-
+  filter: drop-shadow(0 0 4rem $primary-op50);
 
   #terminal-header {
     display: flex;
@@ -16,10 +14,7 @@ filter: drop-shadow(0 0 4rem $primary-op50);
     background: rgba(182, 182, 182, 0.185);
     padding: 0 1rem;
     height: 2rem;
-
-    #terminal-title {
-      color: rgba(255, 255, 255, 0.425);
-    }
+    color: rgba(255, 255, 255, 0.425);
 
     .ter-header-act-btn-wrapper {
       display: flex;
