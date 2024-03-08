@@ -7,16 +7,37 @@ import { Component, Input, OnInit } from '@angular/core'
   styleUrl: './terminal.component.scss',
   template: `
     <div id="terminal">
-      <section id="updater">
-        <div id="progress"></div>
-      </section>
+      <div id="terminal-header">
+        <p id="terminal-title">old fashion way</p>
 
-      @for(log of displayingLog; track log){
-      <span class="code-line">
-        <p class="sever-name">user&#64;rustServer:</p>
-        <p class="code-txt">{{ log }}</p>
-      </span>
-      }
+        <div class="ter-header-act-btn-wrapper">
+          <span
+            class="ter-header-act-btn"
+            [style]="{ background: '#ff5420' }"
+          ></span>
+          <span
+            class="ter-header-act-btn"
+            [style]="{ background: '#ffb120' }"
+          ></span>
+          <span
+            class="ter-header-act-btn"
+            [style]="{ background: '#65cf57' }"
+          ></span>
+        </div>
+      </div>
+
+      <div id="terminal-content">
+        <section id="updater">
+          <div id="progress"></div>
+        </section>
+
+        @for(log of displayingLog; track log){
+        <span class="code-line">
+          <p class="sever-name">user&#64;rustServer:</p>
+          <p class="code-txt">{{ log }}</p>
+        </span>
+        }
+      </div>
     </div>
   `,
 })
