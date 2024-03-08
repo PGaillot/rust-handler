@@ -7,9 +7,8 @@
 <div id="getStarted">
   <div #blurGradient class="blur-gradient-background"></div>
 
-  <div class="get-started-block">
+  <div class="get-started-block" [ngClass]="{'mobile-display-small': smallScreen,'mobile-display-xSmall': xSmallScreen, }" >
     @for(card of benefitCards; track card){
-
     <transparent-benefits-card
       [title]="card.title"
       [top]="card.top"
@@ -18,24 +17,31 @@
       [left]="card.left"
       [description]="card.description"
       [imgUrl]="card.imgUrl"
+      [position]="smallScreen || xSmallScreen ? 'relative' : 'absolute'"
     ></transparent-benefits-card>
-
     }
 
-    <div class="gradient-container">
-      <div class="gradient-box"></div>
-    </div>
+    @if(!smallScreen && !xSmallScreen){
+      <div class="gradient-container">
+        <div class="gradient-box"></div>
+      </div>
+    }
+
   </div>
 </div>
 
 <div id="connection">
   <h1>Simply keep your server <span class="sec-color">up-to-date</span></h1>
-  
 
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro accusantium consequatur nesciunt assumenda necessitatibus. Sit eius tempore mollitia asperiores ullam illum earum animi cum, quas cumque, consequuntur pariatur, porro modi.</p>
   <terminal [logs]="logs"></terminal>
 
+</div>
 
 
+<div id="interface">
+  <h1>Utilisez une <span class="sec-color">interface</span> simple et efficace.</h1>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro accusantium consequatur nesciunt assumenda necessitatibus. Sit eius tempore mollitia asperiores ullam illum earum animi cum, quas cumque, consequuntur pariatur, porro modi.</p>
 
 </div>

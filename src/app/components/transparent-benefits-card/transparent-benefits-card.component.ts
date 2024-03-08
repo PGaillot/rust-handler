@@ -25,7 +25,14 @@ export interface TransparentBenefitCardComponentData {
   template: `
     <div
       class="transparent-benefits-card-container"
-      [ngStyle]="{ top: top, right: right, bottom: bottom, left: left }"
+      [ngStyle]="{
+        top: position === 'absolute' ? top : null,
+        right: position === 'absolute' ? right : null,
+        bottom: position === 'absolute' ? bottom : null,
+        left: position === 'absolute' ? left : null,
+        position: position,
+        width: position === 'absolute' ? '18rem' : '100%'
+      }"
     >
       <div class="transparent-container">
         <img
@@ -41,6 +48,8 @@ export interface TransparentBenefitCardComponentData {
   `,
 })
 export class TransparentBenefitCardComponent {
+  @Input() position: 'relative' | 'absolute' = 'absolute'
+
   @Input() title!: string
   @Input() description!: string
   @Input() imgUrl!: string
@@ -50,14 +59,14 @@ export class TransparentBenefitCardComponent {
   @Input() bottom: string | null = null
   @Input() left: string | null = null
 
-//   @HostListener('mouseenter', ['$event'])
-//   onMouseEnter(event: MouseEvent) {
-//     const element = event.target as HTMLElement
-//     const container = element.getElementsByClassName(
-//       'transparent-container',
-//     )[0] as HTMLElement
-//     const reflect = document.createElement('div') as HTMLElement;
-//     reflect.classList.add('reflect-card');
-//     container.appendChild(reflect)
-//   }
+  //   @HostListener('mouseenter', ['$event'])
+  //   onMouseEnter(event: MouseEvent) {
+  //     const element = event.target as HTMLElement
+  //     const container = element.getElementsByClassName(
+  //       'transparent-container',
+  //     )[0] as HTMLElement
+  //     const reflect = document.createElement('div') as HTMLElement;
+  //     reflect.classList.add('reflect-card');
+  //     container.appendChild(reflect)
+  //   }
 }

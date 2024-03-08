@@ -38,40 +38,49 @@
     width: 35rem;
     background: radial-gradient(ellipse at top, $primary, transparent),
       radial-gradient(ellipse at bottom, $secondary, transparent);
-      transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     transition: all 3s ease-in-out;
     filter: blur(10rem);
   }
 
   .get-started-block {
     position: relative;
-    min-width: 30rem;
     max-width: 60rem;
     width: -webkit-fill-available;
+  }
 
+  .mobile-display-small,
+  .mobile-display-xSmall {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .mobile-display-xSmall {
+    padding: 0 2rem 0 2rem;
+  }
+
+  .mobile-display-small {
+    padding: 0 4rem 0 4rem;
   }
 }
 
-
-#connection{
-
+#connection,
+#interface {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
 
-  p{
+  p {
     max-width: 40rem;
     text-align: center;
   }
 
-    h1{
-        color: white;
-        text-align: center;
-    }
+  h1 {
+    color: white;
+    text-align: center;
+  }
 
-    margin-bottom: 8rem;
-
-    
+  margin-bottom: 8rem;
 }
-

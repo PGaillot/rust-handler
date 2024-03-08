@@ -49,14 +49,14 @@ export class TerminalComponent implements OnInit {
 
   ngOnInit(): void {
     let i: number = 0
-    const interval = setInterval(() => {
-      this.displayingLog = [...this.displayingLog, this.logs[i]]
-      console.log(i)
-      if (i + 1 === this.logs.length) {
-        clearInterval(interval)
-      } else {
-        i += 1
-      }
-    }, 500)
+    // const interval = setInterval(() => {
+    //   this.displayingLog = [...this.displayingLog, this.logs[i]]
+    //   console.log(i)
+    //   if (i + 1 === this.logs.length) {
+    //     clearInterval(interval)
+    //   } else {
+    //     i += 1
+    //   }
+    // }, 500)
   }
 }
