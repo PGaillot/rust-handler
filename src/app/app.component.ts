@@ -16,11 +16,12 @@ import {
 } from '@angular/cdk/layout'
 import { Subscription } from 'rxjs'
 import { NgClass } from '@angular/common'
+import { FadeInImgComponent } from './components/fadeIn-img/fadeIn-img.component'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TransparentBenefitCardComponent, TerminalComponent, NgClass],
+  imports: [TransparentBenefitCardComponent, TerminalComponent, NgClass, FadeInImgComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

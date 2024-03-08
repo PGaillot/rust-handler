@@ -35,7 +35,7 @@ import { Component, Input, OnInit } from '@angular/core'
         <div id="terminal-line-content">
           @for(log of displayingLog; track log){
           <span class="code-line">
-            <p class="sever-name">user&#64;rustServer:</p>
+            <p class="sever-name">us&#64;rust:</p>
             <p class="code-txt">{{ log }}</p>
           </span>
           }
@@ -55,10 +55,10 @@ export class TerminalComponent implements OnInit {
     let i: number = 0
 
 
-    
+
     const interval = setInterval(() => {
       this.displayingLog = [...this.displayingLog, this.logs[i]]
-      console.log(i)
+      
       if (i + 1 === this.logs.length) {
         clearInterval(interval)
       } else {

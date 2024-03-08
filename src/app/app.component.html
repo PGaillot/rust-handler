@@ -7,7 +7,10 @@
 <div id="getStarted">
   <div #blurGradient class="blur-gradient-background"></div>
 
-  <div class="get-started-block" [ngClass]="{'mobile-display-small': smallScreen,'mobile-display-xSmall': xSmallScreen, }" >
+  <div
+    class="get-started-block"
+    [ngClass]="{'mobile-display-small': smallScreen,'mobile-display-xSmall': xSmallScreen, }"
+  >
     @for(card of benefitCards; track card){
     <transparent-benefits-card
       [title]="card.title"
@@ -19,34 +22,50 @@
       [imgUrl]="card.imgUrl"
       [position]="smallScreen || xSmallScreen ? 'relative' : 'absolute'"
     ></transparent-benefits-card>
+    } @if(!smallScreen && !xSmallScreen){
+    <div class="gradient-container">
+      <div class="gradient-box"></div>
+    </div>
     }
-
-    @if(!smallScreen && !xSmallScreen){
-      <div class="gradient-container">
-        <div class="gradient-box"></div>
-      </div>
-    }
-
   </div>
 </div>
 
 <div id="connection">
-  <h1>Simply keep your server <span class="sec-color">up-to-date</span></h1>
+  <h1>
+    Simply keep your server
+    <span class="sec-color">up-to-date</span>
+  </h1>
 
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro accusantium consequatur nesciunt assumenda necessitatibus. Sit eius tempore mollitia asperiores ullam illum earum animi cum, quas cumque, consequuntur pariatur, porro modi.</p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro accusantium
+    consequatur nesciunt assumenda necessitatibus. Sit eius tempore mollitia
+    asperiores ullam illum earum animi cum, quas cumque, consequuntur pariatur,
+    porro modi.
+  </p>
   @defer(on viewport){
-    <terminal [logs]="logs"></terminal>
+  <terminal [logs]="logs"></terminal>
   }@placeholder{
-    <div>placholder</div>
+  <div>placholder</div>
   }
-  
-
 </div>
 
-
 <div id="interface">
-  <h1>Utilisez une <span class="sec-color">interface</span> simple et efficace.</h1>
+  <h1>
+    Utilisez une
+    <span class="sec-color">interface</span>
+    simple et efficace.
+  </h1>
 
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro accusantium consequatur nesciunt assumenda necessitatibus. Sit eius tempore mollitia asperiores ullam illum earum animi cum, quas cumque, consequuntur pariatur, porro modi.</p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro accusantium
+    consequatur nesciunt assumenda necessitatibus. Sit eius tempore mollitia
+    asperiores ullam illum earum animi cum, quas cumque, consequuntur pariatur,
+    porro modi.
+  </p>
 
+  @defer(on viewport){
+  <fadeIn-img [src]="'../assets/icons/windows-fill.svg'"></fadeIn-img>
+  }@placeholder{
+  <div></div>
+  }
 </div>
