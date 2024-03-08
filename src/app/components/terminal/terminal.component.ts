@@ -6,7 +6,8 @@ import { Component, Input, OnInit } from '@angular/core'
   imports: [],
   styleUrl: './terminal.component.scss',
   template: `
-    <div id="terminal">
+
+      <div id="terminal">
       <div id="terminal-header">
         <p>old fashion way</p>
 
@@ -41,6 +42,7 @@ import { Component, Input, OnInit } from '@angular/core'
         </div>
       </div>
     </div>
+    
   `,
 })
 export class TerminalComponent implements OnInit {
@@ -48,15 +50,21 @@ export class TerminalComponent implements OnInit {
   displayingLog: string[] = []
 
   ngOnInit(): void {
+
+
     let i: number = 0
-    // const interval = setInterval(() => {
-    //   this.displayingLog = [...this.displayingLog, this.logs[i]]
-    //   console.log(i)
-    //   if (i + 1 === this.logs.length) {
-    //     clearInterval(interval)
-    //   } else {
-    //     i += 1
-    //   }
-    // }, 500)
+
+
+    
+    const interval = setInterval(() => {
+      this.displayingLog = [...this.displayingLog, this.logs[i]]
+      console.log(i)
+      if (i + 1 === this.logs.length) {
+        clearInterval(interval)
+      } else {
+        i += 1
+      }
+    }, 500)
+    
   }
 }
