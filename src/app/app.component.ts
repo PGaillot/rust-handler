@@ -1,11 +1,12 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
 import { TransparentBenefitCardComponent } from './components/transparent-benefits-card/transparent-benefits-card.component'
+import { TerminalComponent } from './components/terminal/terminal.component'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TransparentBenefitCardComponent],
+  imports: [TransparentBenefitCardComponent, TerminalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -48,6 +49,13 @@ export class AppComponent {
       left: '30%',
       // onMouseEnter:(event) => {},
     },
+  ]
+
+  logs:string[] = [
+    '--rust-handler/server-update',
+    '--rust-handler/oxide-update --lastest',
+    '--rust-server/server_conf.ini',
+    '--server: --restart'
   ]
 
   @ViewChild('blurGradient', { static: true }) blurGradientRef!: ElementRef
