@@ -50,6 +50,10 @@
         }
         .code-txt {
           color: white;
+          text-overflow: ellipsis;
+          width: max-content;
+          text-wrap: nowrap;
+          overflow: hidden;
         }
       }
     }
