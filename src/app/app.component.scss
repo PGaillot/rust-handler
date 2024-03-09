@@ -32,8 +32,6 @@
   .blur-gradient-background {
     z-index: -1;
     position: absolute;
-    // top: 50%;
-    // left: 50%;
     height: 25rem;
     width: 35rem;
     background: radial-gradient(ellipse at top, $primary, transparent),
@@ -90,5 +88,59 @@
     min-width: 14rem;
     max-width: 40rem;
     width: 80%;
+  }
+}
+
+
+#footer{
+
+  grid-template-columns:repeat(4, 1fr);
+  // grid-template-rows:2;
+  display: grid;
+  color: $white;
+  margin-bottom: 4rem;
+  align-items: center;
+  min-width: 14rem;
+  // max-width: 40rem;
+  padding: 0 8rem;
+
+  h2{
+    margin-top: 0;
+  }
+
+  #support{
+    display: flex;
+    flex-direction: column;
+
+    grid-column: 1;
+  }
+
+  #social{
+    display: flex;
+    flex-direction: column;
+
+    grid-column: 2;
+  }
+
+  #newsletter{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    grid-column: 3 / span 4;
+
+
+    .mail-input{
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.5rem 0.5rem 0.5rem 1rem;
+      background: $white;
+      width: min-content;
+      border-radius: 5rem;
+
+      input[type='email']{
+        border: none;
+        outline: none;
+      }
+    }
   }
 }
