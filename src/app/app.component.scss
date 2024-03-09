@@ -123,14 +123,18 @@
 
 #footer {
   grid-template-columns: repeat(4, 1fr);
-  // grid-template-rows:2;
   display: grid;
   color: $white;
   margin-bottom: 4rem;
   align-items: center;
   min-width: 14rem;
-  // max-width: 40rem;
   padding: 0 8rem;
+
+  .link-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
   h2 {
     margin-top: 0;
