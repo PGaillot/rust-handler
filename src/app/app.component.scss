@@ -91,6 +91,22 @@
   }
 }
 
+#interface{
+  .shema-wrapper{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .dynamic-arrow-wrapper{
+
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+
+    }
+  }
+}
+
 
 #footer{
 

@@ -18,11 +18,12 @@ import { Subscription } from 'rxjs'
 import { NgClass } from '@angular/common'
 import { FadeInImgComponent } from './components/fadeIn-img/fadeIn-img.component'
 import { LinkElementComponent } from './components/link-element/link-ekement.component'
+import { DynamicArrowComponent } from './components/dynamic-arrow/dynamic-arrow.component'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TransparentBenefitCardComponent, TerminalComponent, NgClass, FadeInImgComponent, LinkElementComponent],
+  imports: [TransparentBenefitCardComponent, TerminalComponent, NgClass, FadeInImgComponent, LinkElementComponent, DynamicArrowComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

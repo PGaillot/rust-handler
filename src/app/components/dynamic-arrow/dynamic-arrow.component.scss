@@ -1,0 +1,42 @@
+@import '../../../styles.scss';
+
+$size: 1rem;
+
+.leftToRight {
+  transform: rotate(180deg);
+}
+
+.rightToLeft {
+//   transform: rotate(-180deg);
+}
+
+#arrow {
+  overflow: hidden;
+  height: $size;
+  position: relative;
+
+  transition-property: width, opacity;
+  transition-timing-function: ease-in;
+  transition-duration: 1s, 100ms;
+
+  .part {
+    position: absolute;
+    height: 2px;
+    background: $white;
+  }
+  .top {
+    top: calc($size / 4);
+    width: calc($size / 2);
+    transform: rotate(-45deg);
+  }
+  .bot {
+    bottom: calc($size / 4);
+    width: calc($size / 2);
+    transform: rotate(45deg);
+  }
+  .center {
+    transform: translate(0, -50%);
+    top: calc($size / 2);
+    border-radius: 1rem 0 0 1rem;
+  }
+}

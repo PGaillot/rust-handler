@@ -21,6 +21,6 @@ import { Component, Input } from '@angular/core'
   `,
 })
 export class LinkElementComponent {
-  @Input() ref!: string
-  @Input() label!: string
+  @Input() ref!: string;
+  @Input() label!: string;
 }

@@ -56,7 +56,7 @@
     simple et efficace.
   </h1>
 
-  <p>
+  <p style="margin-bottom: 4rem;">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro accusantium
     consequatur nesciunt assumenda necessitatibus. Sit eius tempore mollitia
     asperiores ullam illum earum animi cum, quas cumque, consequuntur pariatur,
@@ -64,7 +64,21 @@
   </p>
 
   @defer(on viewport){
-  <fadeIn-img [src]="'../assets/icons/windows-fill.svg'"></fadeIn-img>
+
+  <div class="shema-wrapper">
+    <fadeIn-img [src]="'../assets/icons/windows-fill.svg'"></fadeIn-img>
+
+    <div class="dynamic-arrow-wrapper">
+      <dynamic-arrow [width]="8"></dynamic-arrow>
+      @defer(on timer(1.5s)){
+      <dynamic-arrow [width]="8" [rightToLeft]="true"></dynamic-arrow>
+      }@placeholder{
+        <div style="height: 1rem;"></div>
+      }
+    </div>
+    <fadeIn-img [src]="'../assets/icons/Linux.svg'"></fadeIn-img>
+  </div>
+
   }@placeholder{
   <div></div>
   }
@@ -75,29 +89,28 @@
   <div id="support">
     <h2>Support</h2>
     <div class="link-wrapper">
-      <link-element label='Discord' ref="https://github.com/"></link-element>
-      <link-element label='Github' ref="https://github.com/"></link-element>
-      <link-element label='Email' ref="https://github.com/"></link-element>
+      <link-element label="Discord" ref="https://github.com/"></link-element>
+      <link-element label="Github" ref="https://github.com/"></link-element>
+      <link-element label="Email" ref="https://github.com/"></link-element>
     </div>
   </div>
   <div id="social">
     <h2>Social Media</h2>
-      <div class="link-wrapper">
-        <link-element label='Codefling' ref="https://github.com/"></link-element>
-        <link-element label='Github' ref="https://github.com/"></link-element>
-        <link-element label='Twitter/X' ref="https://github.com/"></link-element>
-      </div>
+    <div class="link-wrapper">
+      <link-element label="Codefling" ref="https://github.com/"></link-element>
+      <link-element label="Github" ref="https://github.com/"></link-element>
+      <link-element label="Twitter/X" ref="https://github.com/"></link-element>
+    </div>
   </div>
   <div id="newsletter">
     <h2>Subscribe our newsletter</h2>
     <div class="mail-input">
-      <input type="email" placeholder="your email">
+      <input type="email" placeholder="your email" />
       <button>
         send
       </button>
     </div>
-
-  </div>  
+  </div>
   }@placeholder {
   <div></div>
   }

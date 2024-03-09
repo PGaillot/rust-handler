@@ -13,13 +13,15 @@ import { Component, Input, OnInit } from "@angular/core";
 
 export class FadeInImgComponent implements OnInit{
     @Input() src!:string;
+    @Input() delay:number = 100;
+
     opacity:number = 0;
     
     ngOnInit(): void {
 
         setTimeout(() => {
             this.opacity = 1;
-        }, 100)
+        }, this.delay)
     }
 
 }
