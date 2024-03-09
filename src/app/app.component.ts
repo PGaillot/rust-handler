@@ -19,11 +19,12 @@ import { NgClass } from '@angular/common'
 import { FadeInImgComponent } from './components/fadeIn-img/fadeIn-img.component'
 import { LinkElementComponent } from './components/link-element/link-ekement.component'
 import { DynamicArrowComponent } from './components/dynamic-arrow/dynamic-arrow.component'
+import { TransparentCardComponent } from './components/transparent-card/transparent-card.component'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TransparentBenefitCardComponent, TerminalComponent, NgClass, FadeInImgComponent, LinkElementComponent, DynamicArrowComponent],
+  imports: [TransparentBenefitCardComponent, TerminalComponent, NgClass, FadeInImgComponent, LinkElementComponent, DynamicArrowComponent,TransparentCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
