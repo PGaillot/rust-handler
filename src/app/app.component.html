@@ -66,17 +66,34 @@
   @defer(on viewport){
 
   <div class="shema-wrapper">
-    <fadeIn-img [src]="'../assets/icons/windows-fill.svg'"></fadeIn-img>
+
+
+
+    <div class="shema-icon-wrapper">
+      <fadeIn-img [src]="'../assets/icons/windows-fill.svg'"></fadeIn-img>
+      @defer(on timer(2.6s)){
+      <div class="shema-icon-shadow"></div>
+      }
+    </div>
+
 
     <div class="dynamic-arrow-wrapper">
       <dynamic-arrow [width]="8"></dynamic-arrow>
       @defer(on timer(1.5s)){
       <dynamic-arrow [width]="8" [rightToLeft]="true"></dynamic-arrow>
       }@placeholder{
-        <div style="height: 1rem;"></div>
+      <div style="height: 1rem;"></div>
       }
     </div>
-    <fadeIn-img [src]="'../assets/icons/Linux.svg'"></fadeIn-img>
+
+    <div class="shema-icon-wrapper">
+      <fadeIn-img [src]="'../assets/icons/Linux.svg'"></fadeIn-img>
+      @defer(on timer(1.1s)){
+      <div class="shema-icon-shadow"></div>
+      }
+    </div>
+
+
   </div>
 
   }@placeholder{

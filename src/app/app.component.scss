@@ -82,35 +82,46 @@
   margin-bottom: 22rem;
 }
 
-
-#connection{
-  terminal{
+#connection {
+  terminal {
     min-width: 14rem;
     max-width: 40rem;
     width: 80%;
   }
 }
 
-#interface{
-  .shema-wrapper{
+#interface {
+  .shema-wrapper {
     display: flex;
     gap: 1rem;
     align-items: center;
 
-    .dynamic-arrow-wrapper{
-
+    .dynamic-arrow-wrapper {
       display: flex;
       align-items: flex-end;
       flex-direction: column;
+    }
+    .shema-icon-wrapper {
+      position: relative;
+      .shema-icon-shadow {
+        height: 5rem;
+        width: 5rem;
+        border-radius: 5rem;
+        background: $primary-op50;
 
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        filter: blur(2rem);
+      }
     }
   }
 }
 
-
-#footer{
-
-  grid-template-columns:repeat(4, 1fr);
+#footer {
+  grid-template-columns: repeat(4, 1fr);
   // grid-template-rows:2;
   display: grid;
   color: $white;
@@ -120,32 +131,31 @@
   // max-width: 40rem;
   padding: 0 8rem;
 
-  h2{
+  h2 {
     margin-top: 0;
   }
 
-  #support{
+  #support {
     display: flex;
     flex-direction: column;
 
     grid-column: 1;
   }
 
-  #social{
+  #social {
     display: flex;
     flex-direction: column;
 
     grid-column: 2;
   }
 
-  #newsletter{
+  #newsletter {
     display: flex;
     flex-direction: column;
     width: 100%;
     grid-column: 3 / span 4;
 
-
-    .mail-input{
+    .mail-input {
       display: flex;
       gap: 0.5rem;
       padding: 0.5rem 0.5rem 0.5rem 1rem;
@@ -153,7 +163,7 @@
       width: min-content;
       border-radius: 5rem;
 
-      input[type='email']{
+      input[type='email'] {
         border: none;
         outline: none;
       }
