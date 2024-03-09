@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../src/colors.scss';
 
-p{
+p {
   padding: 0;
   margin: 0;
   color: white;
@@ -13,27 +13,36 @@ body {
   padding: 0 1rem;
 }
 
-h1{
-    font-family: 'rust';
-    letter-spacing: 0.15rem;
+h1 {
+  font-family: 'rust';
+  letter-spacing: 0.15rem;
 }
 
-button{
-    border: none;
-    outline: none;
-    padding: 0.5rem 0.9rem;
-    border-radius: 5rem;
-    background: $primary;
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+  color: $white;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 5rem;
+  background: $primary;
 }
 
 @font-face {
-    font-family: "rust";
-    src: url('../src/assets/fonts/Rust.ttf') format('truetype');
-  }
+  font-family: 'rust';
+  src: url('../src/assets/fonts/Rust.ttf') format('truetype');
+}
 
-  .sec-color{
-    color: $secondary;
-  }
+.sec-color {
+  color: $secondary;
+}
 
 .gradient-container {
   display: flex;
