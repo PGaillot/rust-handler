@@ -1,0 +1,61 @@
+@import '../../../styles.scss';
+
+$size: 1rem;
+
+#link-element {
+  overflow: hidden;
+  position: relative;
+  height: 1rem;
+  width: 100%;
+
+  .link-wrapper {
+    position: absolute;
+    left: calc(-1 * (1rem + 0.5rem));
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    transition: left ease-in-out 300ms;
+
+    a {
+      text-decoration: none;
+      color: $white;
+    }
+
+    #arrow {
+      height: $size;
+      width: $size;
+      position: relative;
+      transform: rotate(180deg);
+
+      .part {
+        position: absolute;
+        height: 2px;
+        background: $white;
+      }
+      .top {
+        top: calc($size / 4);
+        width: calc($size / 2);
+        transform: rotate(-45deg);
+      }
+      .bot {
+        bottom: calc($size / 4);
+        width: calc($size / 2);
+        transform: rotate(45deg);
+      }
+      .center {
+        transform: translate(0, -50%);
+        top: calc($size / 2);
+        width: $size;
+        border-radius: 1rem 0 0 1rem;
+      }
+    }
+  }
+
+  &:hover {
+
+    .link-wrapper {
+      left: 0;
+    }
+  }
+}
