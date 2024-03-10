@@ -62,7 +62,7 @@ button {
 
     $border: 3px;
     color: #fff;
-    background: #e2ada4;
+    background: $primary-light;
     background-clip: padding-box; /* !importanté */
     border: solid $border transparent; /* !importanté */
     border-radius: 1em;
@@ -77,7 +77,7 @@ button {
       z-index: -1;
       margin: -$border; /* !importanté */
       border-radius: inherit; /* !importanté */
-      background: linear-gradient(to right, red, orange);
+      background: linear-gradient(to right, $secondary, $primary);
     }
   }
 }
