@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core'
-import { LinkElementComponent } from '../link-element/link-ekement.component'
+import { LinkElement, LinkElementComponent } from '../link-element/link-ekement.component'
 
 @Component({
   selector: 'transparent-card',
@@ -20,7 +20,7 @@ import { LinkElementComponent } from '../link-element/link-ekement.component'
         <p>{{ content }}</p>
 
         @if(link){
-        <link-element [label]="link[0]" [ref]="link[1]"></link-element>
+        <link-element [link]="link"></link-element>
         }
       </div>
     </div>
@@ -30,5 +30,5 @@ export class TransparentCardComponent {
   @Input() title!: string
   @Input() content!: string
   @Input() imgSrc: string | undefined
-  @Input() link: string[] | undefined
+  @Input() link: LinkElement | undefined
 }

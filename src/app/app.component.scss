@@ -124,11 +124,37 @@
 
 #selection{
   display: grid;
+  margin-bottom: 20rem;
+}
+
+.selection-xSmallScreen{
+
+  grid-template-columns: 0.2fr, 1fr, 0.2fr;
+  column-gap: 1rem;
+  row-gap: 1rem;
+
+  transparent-card:first-child{
+    grid-row: 1;
+  }
+  
+  transparent-card:nth-child(2){
+    grid-row: 2;
+  }
+  
+  transparent-card:nth-child(3){
+    grid-row: 3;
+  }
+  
+  transparent-card:nth-child(4){
+    grid-row: 4;
+  }
+}
+
+
+.selection-mediumScreen{
   grid-template-columns: repeat(12, 1fr);
   column-gap: 1rem;
   row-gap: 1rem;
-  margin-bottom: 20rem;
-
   transparent-card:first-child{
     grid-column: 3 / span 5;
   }
@@ -146,8 +172,10 @@
     grid-row: 2;
     grid-column: 7 / span 4;
   }
-
 }
+
+
+
 
 #footer {
   grid-template-columns: repeat(4, 1fr);

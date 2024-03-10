@@ -1,5 +1,10 @@
 import { Component, Input } from '@angular/core'
 
+export interface LinkElement{
+  href:string,
+  label:string,
+}
+
 @Component({
   selector: 'link-element',
   standalone: true,
@@ -13,14 +18,13 @@ import { Component, Input } from '@angular/core'
           <div class="part center"></div>
         </div>
 
-        <a [href]="ref" target="_blank" rel="noopener noreferrer">
-          {{ label }}
+        <a [href]="link.href" target="_blank" rel="noopener noreferrer">
+          {{ link.label }}
         </a>
       </div>
     </div>
   `,
 })
 export class LinkElementComponent {
-  @Input() ref!: string;
-  @Input() label!: string;
+  @Input() link!: LinkElement;
 }

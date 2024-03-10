@@ -94,7 +94,7 @@
   </p>
 </div>
 
-<div id="selection">
+<div id="selection" [ngClass]="xSmallScreen || smallScreen ? 'selection-xSmallScreen' : 'selection-mediumScreen'">
   <transparent-card
     imgSrc="https://cdn.akamai.steamstatic.com/steam/apps/252490/ss_271feae67943bdc141c1249aba116349397e9ba9.1920x1080.jpg?t=1701938429"
     title="Je suis un titre"
@@ -104,13 +104,13 @@
   <transparent-card
     title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, asperiores?"
     content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse inventore similique officia neque eveniet sit magnam minimat beatae quo nihil vel. Repellat minus corrupti ipsa rerum dolorem."
-    [link]="['READ MORE', '']"
+    [link]="{ label: 'Read More', href: 'https://github.com/' }"
   ></transparent-card>
 
   <transparent-card
     title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, asperiores?"
-    content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse inventore similique officia neque eveniet sit magnam minimat beatae quo nihil vel. Repellat minus corrupti ipsconsectetur adipisicing elit. Esse inventore similique officia neque eveniet sit magnam minimat beatae quo nihil vel. Repellat minus corrupti ipsa rerum dolorem." 
-    [link]="['READ MORE', '']"
+    content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse inventore similique officia neque eveniet sit magnam minimat beatae quo nihil vel. Repellat minus corrupti ipsconsectetur adipisicing elit. Esse inventore similique officia neque eveniet sit magnam minimat beatae quo nihil vel. Repellat minus corrupti ipsa rerum dolorem."
+    [link]="{ label: 'Read More', href: 'https://github.com/' }"
   ></transparent-card>
 
   <transparent-card
@@ -125,17 +125,29 @@
   <div id="support">
     <h2>Support</h2>
     <div class="link-wrapper">
-      <link-element label="Discord" ref="https://github.com/"></link-element>
-      <link-element label="Github" ref="https://github.com/"></link-element>
-      <link-element label="Email" ref="https://github.com/"></link-element>
+      <link-element
+        [link]="{ label: 'Discord', href: 'https://github.com/' }"
+      ></link-element>
+      <link-element
+        [link]="{ label: 'Github', href: 'https://github.com/' }"
+      ></link-element>
+      <link-element
+        [link]="{ label: 'Email', href: 'https://github.com/' }"
+      ></link-element>
     </div>
   </div>
   <div id="social">
     <h2>Social Media</h2>
     <div class="link-wrapper">
-      <link-element label="Codefling" ref="https://github.com/"></link-element>
-      <link-element label="Github" ref="https://github.com/"></link-element>
-      <link-element label="Twitter/X" ref="https://github.com/"></link-element>
+      <link-element
+        [link]="{ label: 'Codefling', href: 'https://github.com/' }"
+      ></link-element>
+      <link-element
+        [link]="{ label: 'Github', href: 'https://github.com/' }"
+      ></link-element>
+      <link-element
+        [link]="{ label: 'Twitter/X', href: 'https://github.com/' }"
+      ></link-element>
     </div>
   </div>
   <div id="newsletter">
