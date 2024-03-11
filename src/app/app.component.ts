@@ -20,11 +20,21 @@ import { FadeInImgComponent } from './components/fadeIn-img/fadeIn-img.component
 import { LinkElementComponent } from './components/link-element/link-ekement.component'
 import { DynamicArrowComponent } from './components/dynamic-arrow/dynamic-arrow.component'
 import { TransparentCardComponent } from './components/transparent-card/transparent-card.component'
+import { DynamicTitleComponent } from './components/dynamic-title/dynamic-title.component'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TransparentBenefitCardComponent, TerminalComponent, NgClass, FadeInImgComponent, LinkElementComponent, DynamicArrowComponent,TransparentCardComponent],
+  imports: [
+    TransparentBenefitCardComponent,
+    TerminalComponent,
+    NgClass,
+    FadeInImgComponent,
+    LinkElementComponent,
+    DynamicArrowComponent,
+    TransparentCardComponent,
+    DynamicTitleComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -34,8 +44,8 @@ export class AppComponent implements OnInit, OnDestroy {
   mouseX = 0
   mouseY = 0
 
-  smallScreen: boolean = false;
-  xSmallScreen:boolean = false;
+  smallScreen: boolean = false
+  xSmallScreen: boolean = false
 
   benefitCards: TransparentBenefitCardComponent[] = [
     {
@@ -105,14 +115,12 @@ export class AppComponent implements OnInit, OnDestroy {
 
     this.subscriptions = [
       ...this.subscriptions,
-      this.observer
-        .observe(Breakpoints.Small)
-        .subscribe((res) => {this.smallScreen = res.matches;
-        }),
-      this.observer
-        .observe(Breakpoints.XSmall)
-        .subscribe((res) => {this.xSmallScreen = res.matches;
-        }),
+      this.observer.observe(Breakpoints.Small).subscribe((res) => {
+        this.smallScreen = res.matches
+      }),
+      this.observer.observe(Breakpoints.XSmall).subscribe((res) => {
+        this.xSmallScreen = res.matches
+      }),
     ]
   }
 
