@@ -82,7 +82,7 @@ export class DynamicTitleComponent implements OnInit, AfterViewInit {
 
   playAnim(){
     setTimeout(() => {
-      this.randomInterval = this.randomIntFromInterval(1000, 5000)
+      this.randomInterval = this.randomIntFromInterval(3000, 5000)
       this.animRandomChar();
       this.playAnim();
     }, this.randomInterval)
