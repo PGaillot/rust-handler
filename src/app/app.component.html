@@ -4,9 +4,6 @@
   <button class="btn">purchase</button>
 </div>
 
-
-<dynamic-title [title]="'Rust is the best Game.'"></dynamic-title>
-
 <div id="getStarted">
   <div #blurGradient class="blur-gradient-background"></div>
 
@@ -26,7 +23,6 @@
       [position]="smallScreen || xSmallScreen ? 'relative' : 'absolute'"
     ></transparent-benefits-card>
     } @if(!smallScreen && !xSmallScreen){
-
 
     <div class="gradient-container">
       <div class="gradient-box"></div>
@@ -88,9 +84,12 @@
   </div>
   }@placeholder{
   <div></div>
+  } @defer(on viewport){
+  <dynamic-title [title]="'the easiest way to communicate'"></dynamic-title>
+  <dynamic-title [title]="'with your linux server.'"></dynamic-title>
+  }@placeholder {
+  <h1>the easiest way to communicate with your linux server.</h1>
   }
-
-  <h2>the easiest way to communicate with your linux server.</h2>
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
     recusandae pariatur laudantium, placeat, non consequatur, alias ipsa omnis
@@ -99,7 +98,14 @@
   </p>
 </div>
 
-<div id="selection" [ngClass]="xSmallScreen || smallScreen ? 'selection-xSmallScreen' : 'selection-mediumScreen'">
+<div
+  id="selection"
+  [ngClass]="
+    xSmallScreen || smallScreen
+      ? 'selection-xSmallScreen'
+      : 'selection-mediumScreen'
+  "
+>
   <transparent-card
     imgSrc="https://cdn.akamai.steamstatic.com/steam/apps/252490/ss_271feae67943bdc141c1249aba116349397e9ba9.1920x1080.jpg?t=1701938429"
     title="Je suis un titre"
