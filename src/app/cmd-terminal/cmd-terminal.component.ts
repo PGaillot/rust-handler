@@ -9,7 +9,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core'
     <div id="cmd-terminal">
       <div #cmdContent id="cmd-teminal-content">
         <span>
-          @for (message of messages.reverse(); track message) {
+          @for (message of messages; track message) {
           <p>{{ message }}</p>
           }
         </span>
@@ -48,7 +48,6 @@ export class CmdTerminalComponent {
         - Gloire aux Mangeboules. -
 
   `
-
   helpMessage: string = `
 
 
