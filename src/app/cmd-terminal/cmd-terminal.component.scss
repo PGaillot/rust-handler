@@ -20,7 +20,7 @@ p {
   flex-direction: column;
 
   span{
-    white-space-collapse: preserve-breaks;
+    white-space-collapse:preserve;
     text-wrap: wrap;
     p{
       text-wrap:wrap;
