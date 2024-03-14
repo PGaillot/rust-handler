@@ -1,0 +1,63 @@
+@import '../../styles.scss';
+
+#cmd-terminal,
+textarea,
+p {
+  color: rgb(114, 180, 15);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+}
+
+#cmd-terminal {
+  min-width: 16rem;
+  min-height: 20rem;
+  background: $black;
+  border: 2px solid $white;
+  border-radius: 0.5rem;
+  filter: drop-shadow(0 0 4rem $primary-op50);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+
+  span{
+    white-space-collapse: preserve-breaks;
+    text-wrap: wrap;
+    p{
+      text-wrap:wrap;
+      word-wrap: break-word; // Forcer les mots longs à revenir à la ligne
+    }
+  }
+  
+  #cmd-teminal-content {
+    // overflow-y: scroll;
+    height: 2rem;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  #cmd-teminal-bottom {
+    display: flex;
+  }
+
+  #server-name{
+    margin: 0;
+    padding-top: 2px;
+  }
+
+  textarea[type='text'] {
+    background: transparent;
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    resize: none;
+    overflow: hidden;
+
+    &::after {
+      outline: none;
+      border: none;
+    }
+  }
+}

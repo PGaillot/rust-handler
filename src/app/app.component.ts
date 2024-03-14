@@ -21,6 +21,7 @@ import { LinkElementComponent } from './components/link-element/link-ekement.com
 import { DynamicArrowComponent } from './components/dynamic-arrow/dynamic-arrow.component'
 import { TransparentCardComponent } from './components/transparent-card/transparent-card.component'
 import { DynamicTitleComponent } from './components/dynamic-title/dynamic-title.component'
+import { CmdTerminalComponent } from './cmd-terminal/cmd-terminal.component'
 
 @Component({
   selector: 'app-root',
@@ -33,7 +34,8 @@ import { DynamicTitleComponent } from './components/dynamic-title/dynamic-title.
     LinkElementComponent,
     DynamicArrowComponent,
     TransparentCardComponent,
-    DynamicTitleComponent
+    DynamicTitleComponent,
+    CmdTerminalComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
