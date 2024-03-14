@@ -35,7 +35,7 @@
     height: 25rem;
     width: 35rem;
     background: radial-gradient(ellipse at top, $primary, transparent),
-      radial-gradient(ellipse at bottom, $secondary, transparent);
+    radial-gradient(ellipse at bottom, $secondary, transparent);
     transform: translate(-50%, -50%);
     transition: all 3s ease-in-out;
     filter: blur(10rem);
@@ -120,7 +120,8 @@
     }
   }
 
-  cmd-terminal{
+  cmd-terminal, 
+  .cmd-terminal-placeholder{
     width: 80%;
     max-width: 60rem;
   }

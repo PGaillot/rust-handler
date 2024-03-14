@@ -98,7 +98,11 @@
   </p>
 
 
-  <cmd-terminal></cmd-terminal>
+  @defer(on viewport){
+    <cmd-terminal></cmd-terminal>
+  }@placeholder {
+    <div class="cmd-terminal-placeholder"></div>
+  }
 
 </div>
 
